@@ -1,2 +1,14 @@
-title: <your site title>
-theme: jekyll-theme-minimal
+title: PopsicleRX
+description: A-kiyamaの過去ログ置き場
+baseurl: "/a-kiyamgen.github.io"
+url: "https://A-kiyamgen.github.io"
+markdown: kramdown
+plugins:
+- jekyll-feed
+defaults:
+-
+scope:
+path: ""
+type: "posts"
+values:
+layout: "post"
