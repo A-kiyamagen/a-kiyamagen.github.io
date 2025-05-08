@@ -1,12 +1,45 @@
-<body>
-    <div class="top-bar">
-     <p class="top-bar-text">
-       <a href="{{ '/' | relative_url }}" class="custom-link">{{ site.title }}</a>
-     </p>
+---
+layout: default
+---
+
+<article class="post">
+  <header class="post-header">
+    {% assign image_filename = page.title | downcase | replace: ' ', '-' | replace: /[^\w\s-]/, '' | append: '.jpg' %}
+    {% assign image_path = '/assets/img/posts/' | append: image_filename %}
+
+    {% assign image_exists = site.static_files | where: "path", image_path | first %}
+
+    <div class="post-header-wrapper">
+      {% if image_exists %}
+        <div class="post-header-image">
+          <img src="{{ image_path | relative_url }}" alt="{{ page.title }}">
+        </div>
+      {% endif %}
+      <h1 class="post-title">{{ page.title }}</h1>
+      <p class="post-meta">
+        投稿日: <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+        {% if page.author %} | 著者: {{ page.author }} {% endif %}
+      </p>
     </div>
-    
-    <div class="content">
-        {{ content }}
+
+    {% if page.tags.size > 0 %}
+    <div class="post-tags">
+      <ul>
+        {% for tag in page.tags %}
+        <li><a href="{{ '/tags/' | relative_url }}{{ tag | slugify }}/">{{ tag }}</a></li>
+        {% endfor %}
+      </ul>
     </div>
-    
-</body>
+    {% endif %}
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  {% if page.original %}
+  <div class="original-info">
+    初出: {{ page.original }}
+  </div>
+  {% endif %}
+</article>

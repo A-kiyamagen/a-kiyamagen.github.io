@@ -1,10 +1,22 @@
-.top-bar nav ul {
+.top-bar {
+    position: fixed; /* ビューポートに対して固定 */
+    top: 0;        /* 常に上端に配置 */
+    left: 0;       /* 常に左端に配置 */
+    width: 100%;    /* 幅を100%にする */
+    z-index: 1000;  /* 他の要素より前面に表示 (必要に応じて) */
+    background-color: #f8f8f8; /* 例: 背景色を追加 (必要に応じて) */
+    padding: 1em 0;       /* 例: 上下のpaddingを追加 (必要に応じて) */
+  }
+  
+  .top-bar nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex; /* 横並びにする */
     align-items: center; /* 縦方向中央揃え */
     justify-content: flex-start; /* 左寄せ (必要に応じて) */
+    max-width: 960px; /* 例: コンテンツ幅に合わせて調整 */
+    margin: 0 auto;    /* 中央寄せ (必要に応じて) */
   }
   
   .top-bar nav ul li {

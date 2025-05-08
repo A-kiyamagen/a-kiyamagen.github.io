@@ -1,0 +1,168 @@
+/* 記事全体のコンテナ */
+.post {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+  
+  /* 記事のヘッダー */
+  .post-header {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .post-header-image {
+    margin-bottom: 20px; /* 画像とタイトルの間のスペース */
+    overflow: hidden; /* 必要に応じて */
+    max-height: 300px; /* 画像の最大高さを制限 (お好みの値に調整) */
+  }
+  
+  .post-header-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* 画像をカバーするように表示 */
+    opacity: 0.4; /* 薄くする (透明度) */
+  }
+  
+  .post-title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    color: #333;
+    background-color: transparent;
+    padding: 0;
+    display: block;
+    text-shadow: none;
+  }
+  
+  .post-meta {
+    color: #777;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    background-color: transparent;
+    padding: 0;
+    display: block;
+    text-shadow: none;
+  }
+  
+  .post-tags {
+    margin-top: 20px;
+  }
+  
+  .post-tags ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .post-tags li {
+    margin: 5px 10px;
+  }
+  
+  .post-tags li a {
+    display: inline-block;
+    background-color: #eee;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.85em;
+  }
+  
+  .post-tags li a:hover {
+    background-color: #ddd;
+  }
+  
+  /* 記事の本文 */
+  .post-content {
+    line-height: 1.7;
+    font-size: 1em;
+    color: #333;
+  }
+  
+  .post-content h2 {
+    font-size: 1.8em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    line-height: 1.3;
+  }
+  
+  .post-content h3 {
+    font-size: 1.4em;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  
+  .post-content p {
+    margin-bottom: 15px;
+  }
+  
+  .post-content ul,
+  .post-content ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .post-content li {
+    margin-bottom: 8px;
+  }
+  
+  .post-content code {
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: monospace;
+    font-size: 0.9em;
+  }
+  
+  .post-content pre {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: monospace;
+    font-size: 0.9em;
+    line-height: 1.5;
+  }
+  
+  .post-content pre code {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+  }
+  
+  .post-content img {
+    display: block; /* 画像をブロック要素にする */
+    max-width: 80%; /* 親要素の80%までの幅に調整 */
+    height: auto;    /* 高さの比率は維持 */
+    margin: 20px auto; /* 前後の余白と中央寄せ */
+    border: 5px solid #ddd; /* 額縁のスタイル (太さ、種類、色) */
+    box-sizing: border-box; /* padding, border を幅と高さに含める */
+    border-radius: 5px;    /* 角を少し丸くする (お好みで) */
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.1); /* 影をつける (お好みで) */
+  }
+  
+  /* 初出情報 */
+  .original-info,
+  .original-source {
+    margin-top: 30px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    color: #777;
+    font-size: 0.9em;
+  }
+  
+  .post-content .caption {
+    display: block; /* ブロック要素として扱う */
+    font-size: 0.8em; /* 少し小さめのフォントサイズ */
+    color: #777;     /* グレー系の色 */
+    text-align: center; /* 中央寄せ */
+    margin-top: 5px;   /* 画像との間のスペース */
+    margin-bottom: 15px; /* 次の要素とのスペース */
+  }
