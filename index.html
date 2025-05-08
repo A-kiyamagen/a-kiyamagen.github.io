@@ -3,11 +3,21 @@ layout: default
 ---
 <h1>{{ site.title }}</h1>
 <p>{{ site.title }}へようこそ。ここには{{site.author.name}}が過去に書いたテキストが保管されています。</p>
-<ul>
+<ul class="post-list-index">
   {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span>{{ post.date | date: "%Y-%m-%d" }}</span>
-    </li>
+  <li class="post-card-index">
+    {% assign image_filename = post.title | downcase | replace: ' ', '-' | replace: /[^\w\s-]/, '' | append: '.jpg' %}
+    {% assign image_path = '/assets/img/posts/' | append: image_filename %}
+    {% assign image_exists = site.static_files | where: "path", image_path | first %}
+
+    <a href="{{ post.url | relative_url }}" class="post-link-image-index">
+      {% if image_exists %}
+        <img src="{{ image_path | relative_url }}" alt="{{ post.title }}">
+      {% else %}
+        <span>{{ post.title }}</span>
+      {% endif %}
+    </a>
+    <span>{{ post.date | date: "%Y-%m-%d" }}</span>
+  </li>
   {% endfor %}
 </ul>

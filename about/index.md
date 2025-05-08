@@ -5,8 +5,8 @@ title: About
 
 <h1>About Me</h1>
 
-<p>1987年富山県生まれ</p>
-
+<p>1987年石川県生まれ富山県育ち。</p>
+<p>興味対象:パフォーミングアーツ、オオサンショウウオ</p>
 <h2>Connect with Me</h2>
 
 <ul class="social-links">
