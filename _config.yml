@@ -16,7 +16,7 @@ defaults:
     layout: "post" # post用レイアウトを適用
 
 author: # 呼び出し用変数
-  name: "木山映"
+  name: "A-kiyama"
   X_username: "A_kiyama"
   github_username: "A-kiyamagen"
 

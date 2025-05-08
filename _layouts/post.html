@@ -31,15 +31,17 @@ layout: default
       </ul>
     </div>
     {% endif %}
-  </header>
+    
 
+    {% if page.original %}
+    <div class="original-info">
+      初出: {{ page.original }}
+    </div>
+    {% endif %}
+
+  </header>
+  
   <div class="post-content">
     {{ content }}
   </div>
-
-  {% if page.original %}
-  <div class="original-info">
-    初出: {{ page.original }}
-  </div>
-  {% endif %}
 </article>
