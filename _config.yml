@@ -1,14 +1,26 @@
 title: PopsicleRX
 description: A-kiyamaの過去ログ置き場
-baseurl: "/a-kiyamgen.github.io"
+baseurl: ""
 url: "https://A-kiyamgen.github.io"
+locale: "ja_JP"
+timezone: "Asia/Tokyo"
 markdown: kramdown
 plugins:
-- jekyll-feed
+- jekyll-feed # RSSフィードを生成するプラグイン
+
 defaults:
--
-scope:
-path: ""
-type: "posts"
-values:
-layout: "post"
+- scope: # 対象の範囲
+    path: "" # 全てのファイル
+    type: "posts" # 全てのポスト
+  values:
+    layout: "post" # post用レイアウトを適用
+
+author: # 呼び出し用変数
+  name: "木山映"
+  X_username: "A_kiyama"
+  github_username: "A-kiyamagen"
+
+collection: # コンテンツ管理
+  posts:
+    output: true # htmlを生成する
+    permalink: /:year/:month/:day/:title/ # 各アイテムのパーマリンクの形式
