@@ -70,8 +70,32 @@
 
 /* レスポンシブ対応 (例: 768px 以下でメニューを折りたたむ) */
 @media (max-width: 768px) {
-  .top-bar nav {
-    display: none;
+/* サイトタイトルは中央寄せを維持 */
+.top-bar .site-title {
+  position: static;
+  left: auto;
+  transform: none;
+  text-align: center;
+}
+
+  .top-bar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Flexbox を使用して縦並びにする */
+    flex-direction: column;
+    align-items: flex-end; /* 右寄せ */
+  }
+
+  .top-bar nav ul li {
+    margin-bottom: 5px; /* 各メニュー項目の下の余白 */
+  }
+
+  /* メニュー項目のフォントサイズを小さくする */
+  .top-bar nav ul li a {
+    font-size: 0.8em; /* サイズを調整 */
+    padding: 5px 10px; /* パディングを調整 */
+    display: block; /* リンク全体をクリック可能にする */
   }
   .top-bar .site-title {
     position: static;
