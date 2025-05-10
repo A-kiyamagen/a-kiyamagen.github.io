@@ -16,7 +16,7 @@
 }
 
 .top-bar .site-title {
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: bold;
   color: #333;
   text-decoration: none;
@@ -76,33 +76,31 @@
   left: auto;
   transform: none;
   text-align: center;
-}
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  } 
 
   .top-bar nav ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex; /* Flexbox を使用して縦並びにする */
     flex-direction: column;
     align-items: flex-end; /* 右寄せ */
   }
 
   .top-bar nav ul li {
-    margin-bottom: 5px; /* 各メニュー項目の下の余白 */
+    margin-bottom: 0px; /* 各メニュー項目の下の余白 */
   }
 
   /* メニュー項目のフォントサイズを小さくする */
   .top-bar nav ul li a {
-    font-size: 0.8em; /* サイズを調整 */
-    padding: 5px 10px; /* パディングを調整 */
+    font-size: 1em; /* サイズを調整 */
+    
     display: block; /* リンク全体をクリック可能にする */
+    line-height: 0.2; /* 行間を少し狭める */
+    
   }
-  .top-bar .site-title {
-    position: static;
-    left: auto;
-    transform: none;
-    text-align: center; /* 狭い画面では中央寄せ */
-  }
+
 }
 
 
@@ -117,7 +115,7 @@ body {
 /* レスポンシブ対応 (例: 768px 以下でメニューを折りたたむ) */
 @media (max-width: 768px) {
   body {
-    padding-top: 8em; /* トップバーの高さに合わせて調整 */
+    padding-top: 3em; /* トップバーの高さに合わせて調整 */
     padding-left: 5%; /* 左側のパディング */
     padding-right: 5%; /* 右側のパディング */
     margin: 0; /* デフォルトのマージンをリセット */
@@ -231,7 +229,5 @@ body {
     letter-spacing: 0.0em; /* 必要に応じて文字間を調整 */
     text-transform: uppercase; /* 全て大文字にするのもロゴっぽいです */
     color: #1d1d1d;
-    text-decoration: none; /* 下線を非表示 */
-    
-    text-decoration: none;
+    text-decoration: none; /* 下線を非表示 */    
   }
