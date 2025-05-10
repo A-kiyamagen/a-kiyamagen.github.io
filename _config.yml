@@ -24,3 +24,8 @@ collection: # コンテンツ管理
   posts:
     output: true # htmlを生成する
     permalink: /:year/:month/:day/:title/ # 各アイテムのパーマリンクの形式
+
+collection: # コンテンツ管理
+  tags:
+    output: true
+    permalink: /tags/:name/

@@ -1,0 +1,12 @@
+---
+layout: default
+title: タグ一覧
+---
+
+<h1>すべてのタグ</h1>
+
+<ul>
+  {% for tag in site.tags %}
+    <li><a href="{{ '/tags/' | relative_url }}{{ tag | first | slugify }}/">{{ tag | first }} ({{ tag | last | size }})</a></li>
+  {% endfor %}
+</ul>

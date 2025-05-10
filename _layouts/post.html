@@ -4,10 +4,15 @@ layout: default
 
 <article class="post">
   <header class="post-header">
-    {% assign image_filename = page.title | downcase | replace: ' ', '-' | replace: /[^\w\s-]/, '' | append: '.jpg' %}
-    {% assign image_path = '/assets/img/posts/' | append: image_filename %}
-
-    {% assign image_exists = site.static_files | where: "path", image_path | first %}
+   {% if page.cover %}
+      {% assign cover_path = '/assets/img/posts/' | append: page.cover %}
+      {% assign cover_exists = site.static_files | where: "path", cover_path | first %}
+      {% if cover_exists %}
+        <div class="post-header-image">
+          <img src="{{ cover_path | relative_url }}" alt="{{ page.title }}">
+        </div>
+      {% endif %}
+    {% endif %}
 
     <div class="post-header-wrapper">
       {% if image_exists %}
@@ -31,7 +36,7 @@ layout: default
       </ul>
     </div>
     {% endif %}
-    
+
 
     {% if page.original %}
     <div class="original-info">
@@ -40,7 +45,7 @@ layout: default
     {% endif %}
 
   </header>
-  
+
   <div class="post-content">
     {{ content }}
   </div>

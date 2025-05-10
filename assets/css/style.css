@@ -1,53 +1,109 @@
 .top-bar {
-    position: fixed; /* ビューポートに対して固定 */
-    top: 0;         /* 常に上端に配置 */
-    left: 0;        /* 常に左端に配置 */
-    width: 100%;    /* 幅を100%にする */
-    z-index: 1000;  /* 他の要素より前面に表示 (必要に応じて) */
-    background-color: #f8f8f8; /* 例: 背景色 (必要に応じて) */
-    padding: 1em 0;        /* 例: 上下のpadding (必要に応じて) */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 90%;
+  margin-left: auto; /* 左右のマージンを auto に */
+  margin-right: auto; /* 左右のマージンを auto に */
+  z-index: 1000;
+  background-color: #e9e9e9;
+  padding: 1em 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 子要素を中央に配置 */
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.top-bar .site-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+  /* 中央に配置するためのスタイル */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.top-bar .site-title a {
+  font-size: 2em; /* サイズを調整 */
+  font-weight: normal; /* Bebas Neue はもともと太めなので normal で */
+  font-family: 'Bebas Neue', sans-serif; /* Bebas Neue を指定 */
+  letter-spacing: 0.03em; /* 必要に応じて文字間を調整 */
+  text-transform: uppercase; /* 全て大文字にするのもロゴっぽいです */
+  color: #1d1d1d;
+  text-decoration: none; /* 下線を非表示 */
+  cursor: default; /* マウスオーバー時のカーソルをデフォルトに戻す */
+}
+
+.top-bar nav {
+  margin-left: auto; /* ナビゲーションを右端に配置 */
+}
+
+.top-bar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.top-bar nav ul li {
+  margin-left: 20px;
+}
+
+.top-bar nav ul li:first-child {
+  margin-left: 0;
+}
+
+.top-bar nav ul li a {
+  color: #1d1d1d;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  font-family: 'Smooch Sans', cursive; /* Smooch Sans を指定 */
+  font-size: 1.3em; /* フォントサイズを 1.2em に設定 (調整してください) */
+}
+
+.top-bar nav ul li a:hover {
+  background-color: #f7cbcb;
+}
+
+/* レスポンシブ対応 (例: 768px 以下でメニューを折りたたむ) */
+@media (max-width: 768px) {
+  .top-bar nav {
+    display: none;
   }
+  .top-bar .site-title {
+    position: static;
+    left: auto;
+    transform: none;
+    text-align: center; /* 狭い画面では中央寄せ */
+  }
+}
+
+
+body {
+  padding-top: 3em; /* トップバーの高さに合わせて調整 */
+  padding-left: 5%; /* 左側のパディング */
+  padding-right: 5%; /* 右側のパディング */
+  margin: 0; /* デフォルトのマージンをリセット */
+  background-color: #e9e9e9; /*  */
+}
+
+/* レスポンシブ対応 (例: 768px 以下でメニューを折りたたむ) */
+@media (max-width: 768px) {
+  body {
+    padding-top: 8em; /* トップバーの高さに合わせて調整 */
+    padding-left: 5%; /* 左側のパディング */
+    padding-right: 5%; /* 右側のパディング */
+    margin: 0; /* デフォルトのマージンをリセット */
+    background-color: #e9e9e9; /*  */
+  }
+  }
+
+
   
 
-  .top-bar nav ul {
-    list-style: none; /* リストの点を非表示 */
-    padding: 0;
-    margin: 0;
-    display: flex; /* Flexbox を使用して横並びにする */
-    align-items: center; /* 縦方向中央揃え (必要に応じて) */
-    justify-content: flex-start; /* 左寄せ (必要に応じて) */
-    max-width: 960px; /* コンテンツ幅に合わせて調整 (必要に応じて) */
-    margin: 0 auto; /* 中央寄せ (必要に応じて) */
-  }
-  
-  .top-bar nav ul li {
-    margin-left: 20px; /* 各リストアイテム間のスペース (必要に応じて) */
-  }
-  
-  .top-bar nav ul li:first-child {
-    margin-left: 0; /* 最初のアイテムの左側のスペースを削除 (必要に応じて) */
-  }
-  
-  /* サイトタイトルのスタイル (通常は最初のリストアイテムのリンク) */
-  .top-bar nav ul li:first-child a {
-    font-weight: bold;
-    font-size: 1.2em;
-  }
-  
-  .top-bar nav ul li a {
-    color: #000; /* リンクの色 (必要に応じて) */
-    text-decoration: none; /* 下線を非表示 (必要に応じて) */
-    padding: 0.5em 1em; /* リンクのpadding (必要に応じて) */
-  }
-  
-  /* ホバー時のスタイル (必要に応じて) */
-  .top-bar nav ul li a:hover {
-    opacity: 0.8;
-  }
-  
-  body {
-    padding-top: 3em; /* トップバーの高さに合わせて調整 */
-  }
 
 .profile-intro {
     text-align: center;
@@ -134,10 +190,24 @@
       grid-template-columns: repeat(2, 1fr); /* 2列表示 */
     }
   }
+
+  .post-content {
+    line-height: 1.7;
+    font-size: 1em;
+    color: #333;
+    font-family: 'Sawarabi Gothic', sans-serif; /* さわらびゴシックを指定 */
+    /* 以前の font-family の指定があれば削除またはコメントアウトしてください */
+    letter-spacing: 0.em; /* 必要に応じて文字間を調整 */
+  }
   
-  /* 画面幅が 900px 以上の場合に 2 列表示 (必要に応じて) */
-  @media (min-width: 900px) {
-    .project-list-index {
-      /* grid-template-columns: repeat(2, 1fr);  2列表示 */ /* 上のルールで既に 2 列なので不要 */
-    }
+  .social-links a {
+    font-size: 1em; /* サイズを調整 */
+    font-weight: normal; /* Bebas Neue はもともと太めなので normal で */
+    font-family: 'Bebas Neue', sans-serif; /* Bebas Neue を指定 */
+    letter-spacing: 0.0em; /* 必要に応じて文字間を調整 */
+    text-transform: uppercase; /* 全て大文字にするのもロゴっぽいです */
+    color: #1d1d1d;
+    text-decoration: none; /* 下線を非表示 */
+    
+    text-decoration: none;
   }

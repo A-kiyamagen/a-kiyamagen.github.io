@@ -3,18 +3,17 @@ layout: default
 ---
 
 <div class="profile-intro">
-  <h1>{{ site.title }}</h1>
-  <p>これは{{ site.author.name }}のポートフォリオサイトです。これまでに制作したプロジェクトや作品を紹介しています。</p>
+  
+  <p>{{ site.author.name }}のポートフォリオサイト。これまでに制作した冊子や原稿を再録します。</p>
 </div>
 
 <section class="portfolio-projects">
-  <h2>プロジェクト</h2>
+  <h2>同人誌／ZINE</h2>
   <ul class="project-list-index">
     {% for post in site.posts %}
     <li class="project-card-index">
       <a href="{{ post.url | relative_url }}" class="project-link-image-index">
-        {% assign image_filename = post.title | downcase | replace: ' ', '-' | replace: /[^\w\s-]/, '' | append: '.jpg' %}
-        {% assign image_path = '/assets/img/posts/' | append: image_filename %}
+        {% assign image_path = '/assets/img/posts/' | append: post.cover %}
         {% assign image_exists = site.static_files | where: "path", image_path | first %}
         {% if image_exists %}
           <img src="{{ image_path | relative_url }}" alt="{{ post.title }}">
