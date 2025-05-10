@@ -5,6 +5,8 @@ url: "https://A-kiyamgen.github.io"
 locale: "ja_JP"
 timezone: "Asia/Tokyo"
 markdown: kramdown
+kramdown:
+  hard_wrap: true # 改行を反映する
 plugins:
 - jekyll-feed # RSSフィードを生成するプラグイン
 
