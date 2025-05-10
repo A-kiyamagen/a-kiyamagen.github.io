@@ -170,3 +170,47 @@
     margin-top: 5px;   /* 画像との間のスペース */
     margin-bottom: 15px; /* 次の要素とのスペース */
   }
+
+  /* タブレット以下の画面サイズ (例: 768px 以下) */
+@media (max-width: 768px) {
+  .post {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px;
+  }
+
+  .post-title {
+    font-size: 2em;
+  }
+
+  .post-content img {
+    max-width: 100%; /* 小さな画面では親要素いっぱいに */
+    margin: 15px auto;
+  }
+
+  .post-tags ul {
+    justify-content: flex-start; /* 左寄せで表示 */
+  }
+
+  .post-tags li {
+    margin: 5px 5px;
+  }
+}
+
+/* スマートフォンなどの小さな画面サイズ (例: 480px 以下) */
+@media (max-width: 480px) {
+  .post {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px;
+  }
+
+  .post-title {
+    font-size: 1.5em;
+  }
+
+  .post-content {
+    font-size: 0.95em;
+    line-height: 1.6;
+  }
+}
