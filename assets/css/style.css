@@ -115,7 +115,7 @@ body {
 /* レスポンシブ対応 (例: 768px 以下でメニューを折りたたむ) */
 @media (max-width: 768px) {
   body {
-    padding-top: 3em; /* トップバーの高さに合わせて調整 */
+    padding-top: 5em; /* トップバーの高さに合わせて調整 */
     padding-left: 5%; /* 左側のパディング */
     padding-right: 5%; /* 右側のパディング */
     margin: 0; /* デフォルトのマージンをリセット */
